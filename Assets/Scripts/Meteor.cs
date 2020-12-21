@@ -31,7 +31,7 @@ public class Meteor : MonoBehaviour {
     }
 
     private IEnumerator AutoDestroy() {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(10f);
         this.Destroy();
     }
 }

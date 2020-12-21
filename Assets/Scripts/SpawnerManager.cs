@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class SpawnerManager : MonoBehaviour {
     [SerializeField]
@@ -36,7 +37,9 @@ public class SpawnerManager : MonoBehaviour {
     private IEnumerator SpawnMeteors() {
         while (true) {
             foreach (Transform spawner in this.spawnerTransforms) {
-                this.meteorPool.GetOne().transform.position = spawner.position;
+                if (Random.Range(0f, 1f) >= 0.5f) {
+                    this.meteorPool.GetOne().transform.position = spawner.position;
+                }
             }
             yield return new WaitForSeconds(5f);
         }
