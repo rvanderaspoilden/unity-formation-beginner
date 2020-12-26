@@ -10,11 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 916124826838444062}
   - component: {fileID: 916124826838444063}
-  - component: {fileID: 916124826838444061}
   - component: {fileID: 916124826838444060}
   m_Layer: 0
   m_Name: Meteor
-  m_TagString: Untagged
+  m_TagString: Meteor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,44 +83,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &916124826838444061
-PolygonCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 916124826838444056}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.01, y: 0.84}
-    newSize: {x: 1.01, y: 0.84}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.405, y: -0.25}
-      - {x: 0.505, y: -0.04}
-      - {x: 0.505, y: 0.049999997}
-      - {x: 0.255, y: 0.42}
-      - {x: -0.345, y: 0.42}
-      - {x: -0.36499998, y: 0.41}
-      - {x: -0.505, y: 0.049999997}
-      - {x: -0.505, y: -0.14999999}
-      - {x: -0.24499999, y: -0.42}
-      - {x: -0.16499999, y: -0.42}
-      - {x: 0.114999995, y: -0.32}
-      - {x: 0.24499999, y: -0.37}
-      - {x: 0.39499998, y: -0.32999998}
 --- !u!114 &916124826838444060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,5 +95,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa0a89470134a444b3d6370dde3b51b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sprites:
+  - {fileID: 21300000, guid: f0ac861c06e561d40a1d19726d8d6204, type: 3}
+  - {fileID: 21300000, guid: c84fd3437d3d7464383f8e0680948b98, type: 3}
+  - {fileID: 21300000, guid: 4ab45fc2e03102a469dbd721fd909315, type: 3}
+  - {fileID: 21300000, guid: 8dc657d11577e714eb0f08f1c29f5a8a, type: 3}
+  - {fileID: 21300000, guid: 3a0a60e6fbe5b684382b6c00a216428b, type: 3}
+  - {fileID: 21300000, guid: 1b3a8c3d7f756d141bed8636ea4ee4a3, type: 3}
+  - {fileID: 21300000, guid: 5e390a350708cf549b595aff999f6793, type: 3}
+  - {fileID: 21300000, guid: 6e13986660156f84a90d4b3130858184, type: 3}
+  - {fileID: 21300000, guid: c8fbf886f03147d4484b5da69e4ae451, type: 3}
+  - {fileID: 21300000, guid: 9c7f3958107198a49a5142d7cab46ce2, type: 3}
+  - {fileID: 21300000, guid: cfe36665966edd94e9cef3184099e538, type: 3}
+  - {fileID: 21300000, guid: d28e6d06fc05a3240995dd728301f4d3, type: 3}
+  explosionParticle: {fileID: 8345198823646009793, guid: 4322cf71639cdc640970c5c20cbfd7c2,
+    type: 3}
+  explosionSound: {fileID: 8300000, guid: 6e879a5f5088f0146a2a1e4ff4ca63a7, type: 3}
   moveSpeed: 1
   rotationSpeed: 10

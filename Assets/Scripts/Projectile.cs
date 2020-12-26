@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Projectile : MonoBehaviour {
@@ -9,14 +8,8 @@ public class Projectile : MonoBehaviour {
     [SerializeField]
     private AudioClip sound;
 
-    private AudioSource audioSource;
-
-    private void Awake() {
-        this.audioSource = GetComponent<AudioSource>();
-    }
-
     private void OnEnable() {
-        this.audioSource.PlayOneShot(this.sound);
+        GameManager.Instance.PlaySound(this.sound, 0.3f);
 
         StartCoroutine(this.AutoDestroy());
     }
@@ -31,7 +24,10 @@ public class Projectile : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D other) {
-        Destroy(other.gameObject);
+        if (other.CompareTag("Meteor")) {
+            other.GetComponent<Meteor>().Destroy();
+        }
+        
         Destroy(this.gameObject);
     }
 

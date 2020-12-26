@@ -2,10 +2,10 @@
 
 public class UIManager : MonoBehaviour {
     [SerializeField]
-    private GameObject inGamePanel;
+    private InGameUIController inGameUIController;
 
     [SerializeField]
-    private GameObject endPanel;
+    private EndUIController endUIController;
 
     public static UIManager Instance;
 
@@ -20,12 +20,17 @@ public class UIManager : MonoBehaviour {
     }
 
     public void DisplayInGameView() {
-        this.inGamePanel.SetActive(true);
-        this.endPanel.SetActive(false);
+        this.inGameUIController.gameObject.SetActive(true);
+        this.endUIController.gameObject.SetActive(false);
     }
 
     public void DisplayEndView(bool isSuccess) {
-        this.endPanel.SetActive(true);
-        this.inGamePanel.SetActive(false);
+        this.endUIController.Init(isSuccess);
+        this.endUIController.gameObject.SetActive(true);
+        this.inGameUIController.gameObject.SetActive(false);
+    }
+
+    public void SetTimer(int value) {
+        this.inGameUIController.SetTimer(value);
     }
 }

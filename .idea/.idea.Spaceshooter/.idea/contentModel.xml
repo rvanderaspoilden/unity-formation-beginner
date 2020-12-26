@@ -31,7 +31,9 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="EndUIController.cs" t="Include" />
           <e p="GameManager.cs" t="Include" />
+          <e p="InGameUIController.cs" t="Include" />
           <e p="Launcher.cs" t="Include" />
           <e p="Meteor.cs" t="Include" />
           <e p="Player.cs" t="Include" />

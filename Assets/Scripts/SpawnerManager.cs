@@ -22,26 +22,19 @@ public class SpawnerManager : MonoBehaviour {
         }
 
         Instance = this;
-        
+
         this.meteorPool = new Pool<Meteor>(() => Instantiate(meteorPrefab), 10);
     }
 
-    private void Start() {
-        StartCoroutine(this.SpawnMeteors());
+    public void SpawnMeteors(float threshold) {
+        foreach (Transform spawner in this.spawnerTransforms) {
+            if (Random.Range(0f, 1f) >= threshold) {
+                this.meteorPool.GetOne().transform.position = spawner.position;
+            }
+        }
     }
 
     public void DestroyMeteor(Meteor meteor) {
         this.meteorPool.Destroy(meteor);
-    }
-
-    private IEnumerator SpawnMeteors() {
-        while (true) {
-            foreach (Transform spawner in this.spawnerTransforms) {
-                if (Random.Range(0f, 1f) >= 0.5f) {
-                    this.meteorPool.GetOne().transform.position = spawner.position;
-                }
-            }
-            yield return new WaitForSeconds(5f);
-        }
     }
 }
